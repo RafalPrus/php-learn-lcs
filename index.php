@@ -2,17 +2,20 @@
 
 require 'functions.php';
 require 'Database.php';
-//require 'router.php';
+require 'router.php';
 
 
-$db = new Database();
 
-$posts = $db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
+
+/*$param = $_GET['id'];
+
+$query = "select * from posts where id = :id";
+$posts = $db->query($query, [':id' => $param])->fetchAll();
 
 
 foreach ($posts as $post) {
     echo "<li>" . $post['title'] ." </li>";
-};
+};*/
 
 /*$second_pdo = new PDO($dsn);
 $second_statement = $second_pdo->prepare("INSERT INTO posts (title) VALUES('My Fourth Blog Post')");
