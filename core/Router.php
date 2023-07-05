@@ -45,7 +45,6 @@ class Router {
                 return require base_path($route['controller']);
             }
         }
-        dd($this);
 
         $this->abort();
     }
