@@ -45,3 +45,38 @@ class SimpleClass
 }
 
 (new SimpleClass)->displayVar();
+
+// codewars
+function remove(string $s, int $n): string {
+    $counter = 0;
+    if (str_contains($s, '!') && $counter <= $n) {
+        $s = str_replace('!', '', $s, $n);
+        ++$counter;
+    }
+
+    return $s;
+}
+
+function calc($s) {
+    $result = '';
+    foreach (str_split($s) as $char) {
+        $result .= ord($char);
+    }
+    $result_2 = str_replace('7', '1', $result);
+    $sum1 = 0;
+    $sum2 = 0;
+    foreach (str_split($result) as $num) {
+        $sum1 += $num;
+    }
+
+    foreach (str_split($result_2) as $num) {
+        $sum2 += $num;
+    }
+
+    return $sum1 - $sum2;
+}
+
+function getChar($c)
+{
+    return chr($c);
+}
