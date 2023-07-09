@@ -80,3 +80,31 @@ function getChar($c)
 {
     return chr($c);
 }
+
+function fold_to($distance) {
+    if ($distance < 0) {
+        return null;
+    }
+    $paper = 0.0001;
+    $counter = 0;
+    while ($paper < $distance) {
+        $paper *= 2;
+        $counter++;
+    }
+
+    return $counter;
+}
+
+function solve($arr) {
+    $replays = array_count_values($arr);
+
+    $res = [];
+
+    foreach ($replays as $value=>$occ) {
+        for ($i = 0; $i < $occ - 1; $i++) {
+            unset($arr[array_search($value, $arr)]);
+        }
+    }
+
+    return array_values($arr);
+}
