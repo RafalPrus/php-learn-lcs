@@ -1,0 +1,10 @@
+{
+    "name": "rafalprus/demo",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "Http\\": "Http/"
+        }
+    }
+}
